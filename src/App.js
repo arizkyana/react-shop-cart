@@ -7,8 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // List of Products
 import List from './product/List';
-import Cart from './cart/Cart';
-
 
 class App extends Component {
   render() {

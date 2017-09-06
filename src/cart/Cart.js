@@ -22,11 +22,12 @@ class Cart extends Component {
     render(){
         return (
          <div className="pull-right">
-             <a className="btn btn-default" role="button">
+             <a className="btn btn-default" role="button" data-toggle="modal" data-target="#modal-cart">
                  <i className="glyphicon glyphicon-shopping-cart"></i> &nbsp;
                  <span className="badge">{this.state.cart.length}</span>
              </a>
          </div>
+
         );
     }
 }

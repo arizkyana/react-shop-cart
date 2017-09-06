@@ -3,25 +3,36 @@
  */
 import moment from 'moment/moment';
 
+
 class Product {
 
 
-    constructor(name, type, price){
-        this.id = moment().format('YmdHis') + Math.random();
+    constructor(name, type, price) {
+        this.id = this.guid();
         this.name = name;
         this.type = type;
         this.price = price;
     }
 
+    guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    }
 
 
-    products(){
+    products() {
         let product1 = new Product('Asus', 'Laptop', 14000);
         let product2 = new Product('Lenovo', 'Laptop', 12000);
-        let product3 = new Product('Macbook', 'Laptop', 18000);
-        let product4 = new Product('Macbook', 'Laptop', 18000);
-        let product5 = new Product('Macbook', 'Laptop', 18000);
-        let product6 = new Product('Macbook', 'Laptop', 18000);
+        let product3 = new Product('Macbook Pro 13 inch', 'Laptop', 18000);
+        let product4 = new Product('Macbook Pro 13 inch Retina Display', 'Laptop', 18000);
+        let product5 = new Product('Macbook Pro 15 inch Retina Display ', 'Laptop', 18000);
+        let product6 = new Product('Macbook Air 13 inch', 'Laptop', 18000);
 
         let list = [];
         list.push(product1);

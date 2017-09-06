@@ -13,7 +13,7 @@ class ShopCart {
 
     static addToCart(item) {
 
-        const foundItem = _.find(this.carts, {id: item.id});
+        const foundItem = _.find(this.carts, {name: item.name});
         if (!foundItem) this.carts.push(item);
         console.log(this.carts);
     }

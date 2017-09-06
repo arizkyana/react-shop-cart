@@ -6,6 +6,7 @@ import Product from '../models/Product';
 
 import ShopCart from '../models/ShopCart';
 import Cart from "../cart/Cart";
+import ModalCart from '../cart/ModalCart';
 
 class List extends Component {
 
@@ -46,13 +47,16 @@ class List extends Component {
             </div>
         });
         return (
+
             <div className="row">
+
                 <div className="col-md-12">
-                    <Cart carts={this.state.cart}/>
+                    <Cart carts={ShopCart.carts}/>
                 </div>
                 <div className="col-md-12">
                     <div className="row">{items}</div>
                 </div>
+                <ModalCart carts={ShopCart.carts} />
             </div>
 
 
